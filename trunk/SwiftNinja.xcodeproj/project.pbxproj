@@ -148,6 +148,11 @@
 		347EBFA41A9D0333008FAD25 /* LeaderBoardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFA21A9D0333008FAD25 /* LeaderBoardTableViewController.xib */; };
 		347EBFA91A9D03D0008FAD25 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 347EBFA71A9D03D0008FAD25 /* DejalActivityView.m */; };
 		347EBFAA1A9D03D0008FAD25 /* DejalActivityView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFA81A9D03D0008FAD25 /* DejalActivityView.podspec */; };
+		347EBFC41A9E0CFF008FAD25 /* PuzzleLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347EBFC31A9E0CFF008FAD25 /* PuzzleLevel.m */; };
+		347EBFD31A9E1688008FAD25 /* Face1.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFCF1A9E1688008FAD25 /* Face1.png */; };
+		347EBFD41A9E1688008FAD25 /* Face2.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFD01A9E1688008FAD25 /* Face2.png */; };
+		347EBFD51A9E1688008FAD25 /* Face3.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFD11A9E1688008FAD25 /* Face3.png */; };
+		347EBFD61A9E1688008FAD25 /* Face4.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFD21A9E1688008FAD25 /* Face4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +350,12 @@
 		347EBFA61A9D03D0008FAD25 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
 		347EBFA71A9D03D0008FAD25 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
 		347EBFA81A9D03D0008FAD25 /* DejalActivityView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DejalActivityView.podspec; sourceTree = "<group>"; };
+		347EBFC21A9E0CFF008FAD25 /* PuzzleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleLevel.h; sourceTree = "<group>"; };
+		347EBFC31A9E0CFF008FAD25 /* PuzzleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleLevel.m; sourceTree = "<group>"; };
+		347EBFCF1A9E1688008FAD25 /* Face1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face1.png; sourceTree = "<group>"; };
+		347EBFD01A9E1688008FAD25 /* Face2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face2.png; sourceTree = "<group>"; };
+		347EBFD11A9E1688008FAD25 /* Face3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face3.png; sourceTree = "<group>"; };
+		347EBFD21A9E1688008FAD25 /* Face4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +447,7 @@
 				347EBF9F1A9D0333008FAD25 /* Leaderboards */,
 				347EBF941A9CFDC7008FAD25 /* SubmitScore */,
 				347EBE601A9CF8D3008FAD25 /* StartingMenu */,
+				347EBFAB1A9DFA36008FAD25 /* TrainingModeMenu */,
 			);
 			name = Menus;
 			sourceTree = "<group>";
@@ -530,6 +542,7 @@
 				347EBEBB1A9CFCE2008FAD25 /* AbstractLevel.m */,
 				347EBF911A9CFD39008FAD25 /* AbstractLevelFactory.h */,
 				347EBF921A9CFD39008FAD25 /* AbstractLevelFactory.m */,
+				347EBFC11A9E0CEB008FAD25 /* PuzzleLevel */,
 				347EBEBC1A9CFCE2008FAD25 /* BalanceAndMemory */,
 				347EBED41A9CFCE2008FAD25 /* BottleLevel */,
 				347EBEDC1A9CFCE2008FAD25 /* CardsLevel */,
@@ -816,6 +829,35 @@
 			path = ActivityView;
 			sourceTree = "<group>";
 		};
+		347EBFAB1A9DFA36008FAD25 /* TrainingModeMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TrainingModeMenu;
+			path = Menus/TrainingModeMenu;
+			sourceTree = "<group>";
+		};
+		347EBFC11A9E0CEB008FAD25 /* PuzzleLevel */ = {
+			isa = PBXGroup;
+			children = (
+				347EBFC21A9E0CFF008FAD25 /* PuzzleLevel.h */,
+				347EBFC31A9E0CFF008FAD25 /* PuzzleLevel.m */,
+				347EBFCE1A9E1688008FAD25 /* Resources */,
+			);
+			path = PuzzleLevel;
+			sourceTree = "<group>";
+		};
+		347EBFCE1A9E1688008FAD25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				347EBFCF1A9E1688008FAD25 /* Face1.png */,
+				347EBFD01A9E1688008FAD25 /* Face2.png */,
+				347EBFD11A9E1688008FAD25 /* Face3.png */,
+				347EBFD21A9E1688008FAD25 /* Face4.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -896,6 +938,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347EBFD31A9E1688008FAD25 /* Face1.png in Resources */,
 				347EBF811A9CFCE2008FAD25 /* daggerBonusParticle.sks in Resources */,
 				347EBF5A1A9CFCE2008FAD25 /* spark.png in Resources */,
 				347EBF6A1A9CFCE2008FAD25 /* background1.jpg in Resources */,
@@ -935,6 +978,7 @@
 				347EBF6D1A9CFCE2008FAD25 /* ninja_fall_1@2x.png in Resources */,
 				347EBF721A9CFCE2008FAD25 /* ninja_fall_6@2x.png in Resources */,
 				347EBEAC1A9CF8D3008FAD25 /* KYICircleMenuButton05@2x.png in Resources */,
+				347EBFD51A9E1688008FAD25 /* Face3.png in Resources */,
 				347EBF8A1A9CFCE2008FAD25 /* spark.png in Resources */,
 				347EBF7F1A9CFCE2008FAD25 /* ninja_run_8@2x.png in Resources */,
 				347EBFA41A9D0333008FAD25 /* LeaderBoardTableViewController.xib in Resources */,
@@ -943,6 +987,7 @@
 				347EBF691A9CFCE2008FAD25 /* background0.jpg in Resources */,
 				347EBF651A9CFCE2008FAD25 /* underwater_background.jpeg in Resources */,
 				347EBF461A9CFCE2008FAD25 /* white_circle.png in Resources */,
+				347EBFD61A9E1688008FAD25 /* Face4.png in Resources */,
 				347EBEA41A9CF8D3008FAD25 /* KYICircleMenuButton01.png in Resources */,
 				347EBF861A9CFCE2008FAD25 /* BloodParticle.sks in Resources */,
 				347EBEAB1A9CF8D3008FAD25 /* KYICircleMenuButton05.png in Resources */,
@@ -974,6 +1019,7 @@
 				347EBEAF1A9CF8D3008FAD25 /* KYICircleMenuCenterButton.png in Resources */,
 				347EBF8D1A9CFCE2008FAD25 /* letterJ.png in Resources */,
 				347EBE921A9CF8D3008FAD25 /* Default-568h@2x.png in Resources */,
+				347EBFD41A9E1688008FAD25 /* Face2.png in Resources */,
 				347EBEA71A9CF8D3008FAD25 /* KYICircleMenuButton03.png in Resources */,
 				347EBF4C1A9CFCE2008FAD25 /* bottlesLabel.png in Resources */,
 				347EBF681A9CFCE2008FAD25 /* GameScene.sks in Resources */,
@@ -1014,6 +1060,7 @@
 			files = (
 				347EBF891A9CFCE2008FAD25 /* PondObstacleNode.m in Sources */,
 				347EBF871A9CFCE2008FAD25 /* EnemyNode.m in Sources */,
+				347EBFC41A9E0CFF008FAD25 /* PuzzleLevel.m in Sources */,
 				347EBE8F1A9CF8D3008FAD25 /* CircleMenuViewController.m in Sources */,
 				347EBF671A9CFCE2008FAD25 /* GameScene.m in Sources */,
 				347EBF831A9CFCE2008FAD25 /* NinjaNode.m in Sources */,

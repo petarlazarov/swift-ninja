@@ -13,7 +13,8 @@
     
     if ([name isEqual:@"FlyLevel"]) {
         NSLog(@"Creating FlyLevel");
-        instance = [[FlyLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kFlyLevelTime];    }
+        instance = [[FlyLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kFlyLevelTime];
+    }
     
     if ([name isEqual:@"PopingCirclesLevel"]) {
         NSLog(@"Creating PopingCirclesLevel");
@@ -26,20 +27,31 @@
     
     if ([name isEqual:@"RunLevel"]) {
         NSLog(@"Creating RunLevel");
-        instance = [[GameScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kRunLevelTime];
+//        instance = [[GameScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kRunLevelTime];
+        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        
     }
     
     if ([name isEqual:@"BalanceAndMemoryLevel"]) {
         NSLog(@"Creating BalanceAndMemoryLevel");
-        instance = [[BalanceAndMemoryScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kBalanceAndMemoryTime];
+//        instance = [[BalanceAndMemoryScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kBalanceAndMemoryTime];
+        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        
     }
     if ([name isEqual:@"BottlesLevel"]) {
         NSLog(@"Creating BottlesLevel");
         instance = [[Bottles alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kBottlesLevelTime];
+        
     }
     if ([name isEqual:@"TypeNinja"]) {
-        NSLog(@"Creating BottlesLevel");
+        NSLog(@"Creating TypeNinja");
         instance = [[TypeNinja alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        
+        
+    }
+    if ([name isEqual:@"PuzzleLevel"]) {
+        NSLog(@"Creating PuzzleLevel");
+        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
     }
 
 

@@ -2,6 +2,7 @@
 #import "CircleMenuViewController.h"
 #import "PlayModeViewController.h"
 #import "LeaderBoardTableViewController.h"
+#import "PuzzleLevel.h"
 
 @implementation CircleMenuViewController
 
@@ -53,6 +54,8 @@
     if([sender tag]==2 ){
 //        AwesomeMenuViewController* vc = [[AwesomeMenuViewController alloc] init];
 //        [self pushViewController:vc];
+        
+        
     }
     if([sender tag]==3){
         LeaderBoardTableViewController* vc=[[LeaderBoardTableViewController alloc] init];
