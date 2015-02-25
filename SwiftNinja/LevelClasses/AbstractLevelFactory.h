@@ -9,6 +9,7 @@
 #import "BalanceAndMemoryScene.h"
 #import "Bottles.h"
 #import "TypeNinja.h"
+#import "PuzzleLevel.h"
 /*
  This class is contains a factory method that returns the desired level.
  Add your levels in the +sceneFactory method.
