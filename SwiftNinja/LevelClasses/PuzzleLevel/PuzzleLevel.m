@@ -17,6 +17,8 @@ const NSString* face1= @"face1.png";
 const NSString* face2= @"face2.png";
 const NSString* face3= @"face3.png";
 const NSString* face4= @"face4.png";
+const NSUInteger defaultSize = 128;
+
 
 -(void)didMoveToView:(SKView *)view{
     
@@ -27,16 +29,16 @@ const NSString* face4= @"face4.png";
     self.view4 = [SKSpriteNode spriteNodeWithImageNamed:@"face4.png"];
     //Size of the Nodes
     
-    self.view1.size= CGSizeMake(64, 64);
-    self.view2.size= CGSizeMake(64, 64);
-    self.view3.size= CGSizeMake(64, 64);
-    self.view4.size= CGSizeMake(64, 64);
+    self.view1.size= CGSizeMake(defaultSize, defaultSize);
+    self.view2.size= CGSizeMake(defaultSize, defaultSize);
+    self.view3.size= CGSizeMake(defaultSize, defaultSize);
+    self.view4.size= CGSizeMake(defaultSize, defaultSize);
     //Position of the Nodes
     
     self.view1.position = CGPointMake(self.size.width*0.5,self.size.height* 0.5);
-    self.view2.position = CGPointMake(self.size.width*0.5,((self.size.height*0.5)+64));
-    self.view3.position = CGPointMake(((self.size.width*0.5)-64), ((self.size.height*0.5)+64));
-    self.view4.position = CGPointMake(((self.size.width*0.5)-64), self.size.height*0.5);
+    self.view2.position = CGPointMake(self.size.width*0.5,((self.size.height*0.5)+defaultSize));
+    self.view3.position = CGPointMake(((self.size.width*0.5)-defaultSize), ((self.size.height*0.5)+defaultSize));
+    self.view4.position = CGPointMake(((self.size.width*0.5)-defaultSize), self.size.height*0.5);
     
     
     
