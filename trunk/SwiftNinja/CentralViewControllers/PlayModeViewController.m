@@ -33,7 +33,7 @@ NSMutableArray* levelList;
         [levelList removeObjectAtIndex:randomObjectIndex];
         
         self.scene = [AbstractLevelFactory sceneFactory:levelName];
-        self.scene.scaleMode = SKSceneScaleModeResizeFill;
+        self.scene.scaleMode = SKSceneScaleModeFill;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(presentNewScene:)
