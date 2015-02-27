@@ -209,7 +209,7 @@ BurningProgressbar* progressBar;
 
 - (void)updateProgress {
     NSLog(@"%d", numIndex);
-//    hintLabel = @"";
+    //    hintLabel = @"";
     if (counter == kIndexChecker) {
         if (![typeCard1  isEqualToString: @"Green_tick_1.png"]) {
             typeCard1 = @"back.jpg";
@@ -260,24 +260,24 @@ BurningProgressbar* progressBar;
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    // the user clicked OK    
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"DemandNewScene"
-         object:self];
-
+    // the user clicked OK
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"DemandNewScene"
+     object:self];
+    
 }
 -(void) generateCards {
     
     SKLabelNode *labelDescr = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-    labelDescr.position = CGPointMake(500, 650);
-    labelDescr.fontSize = 25;
+    labelDescr.position = CGPointMake(self.size.width* 0.5, self.size.height* 0.8);
+    labelDescr.fontSize = self.size.width* 0.03;
     labelDescr.fontColor = [UIColor whiteColor];
     labelDescr.text = [NSString stringWithFormat:@"Match the cards"];
     labelDescr.name = @"descriptionLabel";
     [self addChild:labelDescr];
     self.hint = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-    self.hint.position = CGPointMake(500, 580);
-    self.hint.fontSize = 35;
+    self.hint.position = CGPointMake(self.size.width* 0.5, self.size.height* 0.7);
+    self.hint.fontSize = self.size.width* 0.03;
     self.hint.fontColor = [UIColor whiteColor];
     self.hint.text = [NSString stringWithFormat:hintLabel];
     self.hint.name = @"hint";
@@ -286,40 +286,40 @@ BurningProgressbar* progressBar;
     
     self.firstCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard1];
     [self addChild:self.firstCard];
-    self.firstCard.position = CGPointMake(150, kWidth);
+    self.firstCard.position = CGPointMake(self.size.width* 0.12, self.size.height* 0.38);
     self.firstCard.name = @"firstCard";
-    self.firstCard.xScale = kIndexScaleNodes;
-    self.firstCard.yScale = kIndexScaleNodes;
+    self.firstCard.xScale = self.size.width* 0.00075;
+    self.firstCard.yScale = self.size.width* 0.00075;
     self.secondCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard2];
     [self addChild:self.secondCard];
-    self.secondCard.position = CGPointMake(300, kWidth);
+    self.secondCard.position = CGPointMake(self.size.width* 0.27, self.size.height* 0.38);
     self.secondCard.name = @"secondCard";
-    self.secondCard.xScale = kIndexScaleNodes;
-    self.secondCard.yScale = kIndexScaleNodes;
+    self.secondCard.xScale = self.size.width* 0.00075;
+    self.secondCard.yScale = self.size.width* 0.00075;
     self.thirdCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard3];
     [self addChild:self.thirdCard];
-    self.thirdCard.position = CGPointMake(450, kWidth);
+    self.thirdCard.position = CGPointMake(self.size.width* 0.42, self.size.height* 0.38);
     self.thirdCard.name = @"thirdCard";
-    self.thirdCard.xScale = kIndexScaleNodes;
-    self.thirdCard.yScale = kIndexScaleNodes;
+    self.thirdCard.xScale = self.size.width* 0.00075;
+    self.thirdCard.yScale = self.size.width* 0.00075;
     self.fourthCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard4];
     [self addChild:self.fourthCard];
-    self.fourthCard.position = CGPointMake(600, kWidth);
+    self.fourthCard.position = CGPointMake(self.size.width* 0.58, self.size.height* 0.38);
     self.fourthCard.name = @"fourthCard";
-    self.fourthCard.xScale = kIndexScaleNodes;
-    self.fourthCard.yScale = kIndexScaleNodes;
+    self.fourthCard.xScale = self.size.width* 0.00075;
+    self.fourthCard.yScale = self.size.width* 0.00075;
     self.fifthCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard5];
     [self addChild:self.fifthCard];
-    self.fifthCard.position = CGPointMake(750, kWidth);
+    self.fifthCard.position = CGPointMake(self.size.width* 0.73, self.size.height* 0.38);
     self.fifthCard.name = @"fifthCard";
-    self.fifthCard.xScale = kIndexScaleNodes;
-    self.fifthCard.yScale = kIndexScaleNodes;
+    self.fifthCard.xScale = self.size.width* 0.00075;
+    self.fifthCard.yScale = self.size.width* 0.00075;
     self.sixthCard = [SKSpriteNode spriteNodeWithImageNamed:typeCard6];
     [self addChild:self.sixthCard];
-    self.sixthCard.position = CGPointMake(900, kWidth);
+    self.sixthCard.position = CGPointMake(self.size.width* 0.88, self.size.height* 0.38);
     self.sixthCard.name = @"sixthCard";
-    self.sixthCard.xScale = kIndexScaleNodes;
-    self.sixthCard.yScale = kIndexScaleNodes;
+    self.sixthCard.xScale = self.size.width* 0.00075;
+    self.sixthCard.yScale = self.size.width* 0.00075;
 }
 -(void)update:(CFTimeInterval)currentTime {
     [super update:currentTime];
