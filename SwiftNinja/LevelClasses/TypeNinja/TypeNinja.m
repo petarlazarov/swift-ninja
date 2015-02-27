@@ -27,47 +27,48 @@ NSInteger step = 0;
 }
 
 -(void)createSceneContents {
+    NSLog(@"%f",self.size.width);
     hasGameEnded = NO;
     
     SKLabelNode *labelDescr = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-    labelDescr.position = CGPointMake(500, 650);
-    labelDescr.fontSize = 25;
+    labelDescr.position = CGPointMake(self.size.width* 0.5, self.size.height* 0.75);
+    labelDescr.fontSize = self.size.width* 0.03;
     labelDescr.fontColor = [UIColor whiteColor];
     labelDescr.text = [NSString stringWithFormat:@"Type - N I N J A -"];
     labelDescr.name = @"descriptionLabel";
     [self addChild:labelDescr];
-
+    
     
     self.firstLetter = [SKSpriteNode spriteNodeWithImageNamed:@"letterJ.png"];
     [self addChild:self.firstLetter];
     self.firstLetter.name = @"fourth";
-    self.firstLetter.position = CGPointMake(300, kWidth);
-    self.firstLetter.xScale = kIndexScaleNodes;
-    self.firstLetter.yScale = kIndexScaleNodes;
+    self.firstLetter.position = CGPointMake(self.size.width* 0.2, self.size.height* 0.5);
+    self.firstLetter.xScale = (self.size.width* 0.0003);
+    self.firstLetter.yScale = (self.size.width* 0.0003);
     self.secondLetter = [SKSpriteNode spriteNodeWithImageNamed:@"letterN.png"];
     [self addChild:self.secondLetter];
     self.secondLetter.name = @"first";
-    self.secondLetter.position = CGPointMake(400, kWidth);
-    self.secondLetter.xScale = kIndexScaleNodes;
-    self.secondLetter.yScale = kIndexScaleNodes;
+    self.secondLetter.position = CGPointMake(self.size.width* 0.35, self.size.height* 0.5);
+    self.secondLetter.xScale = (self.size.width* 0.0003);
+    self.secondLetter.yScale = (self.size.width* 0.0003);
     self.thirdLetter = [SKSpriteNode spriteNodeWithImageNamed:@"letterA.png"];
     [self addChild:self.thirdLetter];
     self.thirdLetter.name = @"fifth";
-    self.thirdLetter.position = CGPointMake(500, kWidth);
-    self.thirdLetter.xScale = kIndexScaleNodes;
-    self.thirdLetter.yScale = kIndexScaleNodes;
+    self.thirdLetter.position = CGPointMake(self.size.width* 0.5, self.size.height* 0.5);
+    self.thirdLetter.xScale = (self.size.width* 0.0003);
+    self.thirdLetter.yScale = (self.size.width* 0.0003);
     self.fourthLetter = [SKSpriteNode spriteNodeWithImageNamed:@"letterN.png"];
     [self addChild:self.fourthLetter];
     self.fourthLetter.name = @"third";
-    self.fourthLetter.position = CGPointMake(600, kWidth);
-    self.fourthLetter.xScale = kIndexScaleNodes;
-    self.fourthLetter.yScale = kIndexScaleNodes;
+    self.fourthLetter.position = CGPointMake(self.size.width* 0.65, self.size.height* 0.5);
+    self.fourthLetter.xScale = (self.size.width* 0.0003);
+    self.fourthLetter.yScale = (self.size.width* 0.0003);
     self.fifthLetter = [SKSpriteNode spriteNodeWithImageNamed:@"letterI.png"];
     [self addChild:self.fifthLetter];
     self.fifthLetter.name = @"second";
-    self.fifthLetter.position = CGPointMake(700, kWidth);
-    self.fifthLetter.xScale = kIndexScaleNodes;
-    self.fifthLetter.yScale = kIndexScaleNodes;
+    self.fifthLetter.position = CGPointMake(self.size.width* 0.8, self.size.height* 0.5);
+    self.fifthLetter.xScale = (self.size.width* 0.0003);
+    self.fifthLetter.yScale = (self.size.width* 0.0003);
     
     
     
@@ -81,47 +82,47 @@ NSInteger step = 0;
         //        int nodePos = node.zPosition;
         
         if ([node.name isEqualToString:@"first"])  {
-            if (step == kStartStep) {
-            [node removeFromParent];
-            NSLog(@"blue");
+            if (step == kStartStep || step == kThirdStep) {
+                [node removeFromParent];
+                NSLog(@"blue");
                 step++;
                 NSLog(@"%ld",(long)step);
-
+                
             }
         }
         if ([node.name isEqualToString:@"second"])  {
-                if (step == kFirstStep) {
-                    [node removeFromParent];
-                    NSLog(@"blue");
-                    step++;
-                }
+            if (step == kFirstStep) {
+                [node removeFromParent];
+                NSLog(@"blue");
+                step++;
+            }
         }
         if ([node.name isEqualToString:@"third"])  {
-                    if (step == kSecondStep) {
-                        [node removeFromParent];
-                        NSLog(@"blue");
-                        step++;
-                    }
+            if (step == kSecondStep) {
+                [node removeFromParent];
+                NSLog(@"blue");
+                step++;
+            }
         }
         if ([node.name isEqualToString:@"fourth"])  {
-                        if (step == kThirdStep) {
-                            [node removeFromParent];
-                            NSLog(@"blue");
-                            step++;
-                        }
+            if (step == kThirdStep || step == kStartStep) {
+                [node removeFromParent];
+                NSLog(@"blue");
+                step++;
+            }
         }
         if ([node.name isEqualToString:@"fifth"])  {
-                            if (step == kFourthStep) {
-                                [node removeFromParent];
-                                NSLog(@"blue");
-                                step=kStartStep;
-                                self.currentScore +=(self.totalTime- self.elapsedTime)* kIndexPoints;
-                                [self endGame];
-                                
-                            }
+            if (step == kFourthStep) {
+                [node removeFromParent];
+                NSLog(@"blue");
+                step=kStartStep;
+                self.currentScore +=(self.totalTime- self.elapsedTime)* kIndexPoints;
+                [self endGame];
+                
+            }
         }
-                        }
-                    }
+    }
+}
 
 - (void) endGame {
     hasGameEnded = YES;
