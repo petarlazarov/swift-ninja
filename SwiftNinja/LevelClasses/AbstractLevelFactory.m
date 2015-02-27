@@ -53,6 +53,10 @@
         NSLog(@"Creating PuzzleLevel");
         instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
     }
+    if ([name isEqual:@"ChessBoardLevel"]) {
+        NSLog(@"ChessBoardLevel");
+        instance = [[ChessBoardLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+    }
 
 
     
