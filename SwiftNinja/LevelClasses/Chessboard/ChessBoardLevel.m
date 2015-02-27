@@ -5,6 +5,9 @@
 
 @property NSMutableArray* chessField;
 @property SKSpriteNode* knightNode;
+@property SKSpriteNode* targetNode;
+
+@property NSInteger* randomInteger;
 
 @property CGFloat positionX;
 @property CGFloat positionY;
@@ -17,6 +20,7 @@
 const NSString* whiteField=@"white.jpg";
 const NSString* blackField=@"black.jpg";
 const NSString* horseFigure=@"chess.png";
+const NSString* target=@"target.png";
 const NSInteger sizeOfSquare=70;
 
 -(void)didMoveToView:(SKView *)view{
@@ -33,6 +37,18 @@ const NSInteger sizeOfSquare=70;
     self.knightNode.position = CGPointMake(square.position.x, square.position.y);
     self.knightNode.size = CGSizeMake(sizeOfSquare, sizeOfSquare);
     [self addChild:self.knightNode];
+    
+    //Placing the target at random position
+    
+    do {
+        self.randomInteger = arc4random_uniform([self.chessField count]);
+    } while (randomObjectIndex==self.randomInteger);
+    
+    self.targetNode =[SKSpriteNode spriteNodeWithImageNamed:target];
+    SKSpriteNode* nodeForTarget = [self.chessField objectAtIndex:self.randomInteger];
+    self.targetNode.position= CGPointMake(nodeForTarget.position.x, nodeForTarget.position.y);
+    self.targetNode.size = CGSizeMake(sizeOfSquare, sizeOfSquare);
+    [self addChild:self.targetNode];
     
     [super didMoveToView:view];
 }
