@@ -14,22 +14,22 @@
 
 @implementation PuzzleLevel
 
-const NSString* face1= @"face1.png";
+static const NSString* face1= @"face1.png";
 const NSString* face2= @"face2.png";
 const NSString* face3= @"face3.png";
 const NSString* face4= @"face4.png";
 const NSUInteger defaultSize = 128;
-const CGFloat anchorPoint=0.5;
-
+const CGFloat anchorPointX=0.6;
+const CGFloat anchorPointY=0.4;
 
 
 -(void)didMoveToView:(SKView *)view{
     
     
-    self.view1 = [SKSpriteNode spriteNodeWithImageNamed:@"face1.png"];
-    self.view2 = [SKSpriteNode spriteNodeWithImageNamed:@"face2.png"];
-    self.view3 = [SKSpriteNode spriteNodeWithImageNamed:@"face3.png"];
-    self.view4 = [SKSpriteNode spriteNodeWithImageNamed:@"face4.png"];
+    self.view1 = [SKSpriteNode spriteNodeWithImageNamed:face1];
+    self.view2 = [SKSpriteNode spriteNodeWithImageNamed:face2];
+    self.view3 = [SKSpriteNode spriteNodeWithImageNamed:face3];
+    self.view4 = [SKSpriteNode spriteNodeWithImageNamed:face4];
     
     //Size of the Nodes
     
@@ -41,15 +41,12 @@ const CGFloat anchorPoint=0.5;
     //Position of the Nodes
     
     
-    self.view1.position = CGPointMake(self.frame.size.width*anchorPoint,self.frame.size.height* anchorPoint);
-    self.view2.position = CGPointMake(self.frame.size.width*anchorPoint,((self.frame.size.height*anchorPoint)+defaultSize));
-    self.view3.position = CGPointMake(((self.frame.size.width*anchorPoint)-defaultSize), ((self.frame.size.height*anchorPoint)+defaultSize));
-    self.view4.position = CGPointMake(((self.frame.size.width*anchorPoint)-defaultSize), self.frame.size.height*anchorPoint);
+    self.view1.position = CGPointMake(self.frame.size.width*anchorPointX,self.frame.size.height* anchorPointY);
+    self.view2.position = CGPointMake(self.frame.size.width*anchorPointX,((self.frame.size.height*anchorPointY)+defaultSize));
+    self.view3.position = CGPointMake(((self.frame.size.width*anchorPointX)-defaultSize), ((self.frame.size.height*anchorPointY)+defaultSize));
+    self.view4.position = CGPointMake(((self.frame.size.width*anchorPointX)-defaultSize), self.frame.size.height*anchorPointY);
     
-    self.view1.anchorPoint=CGPointMake(0, 1);
-    self.view2.anchorPoint=CGPointMake(0, 1);
-    self.view3.anchorPoint=CGPointMake(0, 1);
-    self.view4.anchorPoint=CGPointMake(0, 1);
+    
     
     
     //Adding the childs to the scene
