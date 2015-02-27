@@ -24,6 +24,7 @@
         [self.levelList addObject:@"BalanceAndMemoryLevel"];
         [self.levelList addObject:@"BottlesLevel"];
         [self.levelList addObject:@"PuzzleLevel"];
+        [self.levelList addObject:@"ChessBoardLevel"];
     }
     return self;
 }

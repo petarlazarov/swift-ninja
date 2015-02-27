@@ -9,6 +9,7 @@
 @property SKSpriteNode* view3;
 @property SKSpriteNode* view4;
 
+
 @end
 
 @implementation PuzzleLevel
@@ -18,6 +19,8 @@ const NSString* face2= @"face2.png";
 const NSString* face3= @"face3.png";
 const NSString* face4= @"face4.png";
 const NSUInteger defaultSize = 128;
+const CGFloat anchorPoint=0.5;
+
 
 
 -(void)didMoveToView:(SKView *)view{
@@ -27,19 +30,26 @@ const NSUInteger defaultSize = 128;
     self.view2 = [SKSpriteNode spriteNodeWithImageNamed:@"face2.png"];
     self.view3 = [SKSpriteNode spriteNodeWithImageNamed:@"face3.png"];
     self.view4 = [SKSpriteNode spriteNodeWithImageNamed:@"face4.png"];
+    
     //Size of the Nodes
     
     self.view1.size= CGSizeMake(defaultSize, defaultSize);
     self.view2.size= CGSizeMake(defaultSize, defaultSize);
     self.view3.size= CGSizeMake(defaultSize, defaultSize);
     self.view4.size= CGSizeMake(defaultSize, defaultSize);
+    
     //Position of the Nodes
     
-    self.view1.position = CGPointMake(self.size.width*0.5,self.size.height* 0.5);
-    self.view2.position = CGPointMake(self.size.width*0.5,((self.size.height*0.5)+defaultSize));
-    self.view3.position = CGPointMake(((self.size.width*0.5)-defaultSize), ((self.size.height*0.5)+defaultSize));
-    self.view4.position = CGPointMake(((self.size.width*0.5)-defaultSize), self.size.height*0.5);
     
+    self.view1.position = CGPointMake(self.frame.size.width*anchorPoint,self.frame.size.height* anchorPoint);
+    self.view2.position = CGPointMake(self.frame.size.width*anchorPoint,((self.frame.size.height*anchorPoint)+defaultSize));
+    self.view3.position = CGPointMake(((self.frame.size.width*anchorPoint)-defaultSize), ((self.frame.size.height*anchorPoint)+defaultSize));
+    self.view4.position = CGPointMake(((self.frame.size.width*anchorPoint)-defaultSize), self.frame.size.height*anchorPoint);
+    
+    self.view1.anchorPoint=CGPointMake(0, 1);
+    self.view2.anchorPoint=CGPointMake(0, 1);
+    self.view3.anchorPoint=CGPointMake(0, 1);
+    self.view4.anchorPoint=CGPointMake(0, 1);
     
     
     //Adding the childs to the scene
@@ -47,7 +57,7 @@ const NSUInteger defaultSize = 128;
     [self addChild:self.view2];
     [self addChild:self.view3];
     [self addChild:self.view4];
-    
+   
     [super didMoveToView:view];
 }
 

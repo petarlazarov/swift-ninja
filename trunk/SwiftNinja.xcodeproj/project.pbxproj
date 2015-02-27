@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347B26FD1AA0CFB400B66C2B /* ChessBoardLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B26FC1AA0CFB400B66C2B /* ChessBoardLevel.m */; };
+		347B27021AA0D15000B66C2B /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 347B26FF1AA0D15000B66C2B /* black.jpg */; };
+		347B27031AA0D15000B66C2B /* chess.png in Resources */ = {isa = PBXBuildFile; fileRef = 347B27001AA0D15000B66C2B /* chess.png */; };
+		347B27041AA0D15000B66C2B /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 347B27011AA0D15000B66C2B /* white.jpg */; };
 		347EBE391A9BC515008FAD25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 347EBE381A9BC515008FAD25 /* main.m */; };
 		347EBE3C1A9BC515008FAD25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 347EBE3B1A9BC515008FAD25 /* AppDelegate.m */; };
 		347EBE421A9BC515008FAD25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347EBE401A9BC515008FAD25 /* Main.storyboard */; };
@@ -166,6 +170,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		347B26FB1AA0CFB400B66C2B /* ChessBoardLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLevel.h; sourceTree = "<group>"; };
+		347B26FC1AA0CFB400B66C2B /* ChessBoardLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessBoardLevel.m; sourceTree = "<group>"; };
+		347B26FF1AA0D15000B66C2B /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
+		347B27001AA0D15000B66C2B /* chess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess.png; sourceTree = "<group>"; };
+		347B27011AA0D15000B66C2B /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		347EBE331A9BC515008FAD25 /* SwiftNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347EBE371A9BC515008FAD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		347EBE381A9BC515008FAD25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -378,6 +387,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		347B26FA1AA0CF8300B66C2B /* Chessboard */ = {
+			isa = PBXGroup;
+			children = (
+				347B26FB1AA0CFB400B66C2B /* ChessBoardLevel.h */,
+				347B26FC1AA0CFB400B66C2B /* ChessBoardLevel.m */,
+				347B26FE1AA0D15000B66C2B /* Resources */,
+			);
+			path = Chessboard;
+			sourceTree = "<group>";
+		};
+		347B26FE1AA0D15000B66C2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				347B26FF1AA0D15000B66C2B /* black.jpg */,
+				347B27001AA0D15000B66C2B /* chess.png */,
+				347B27011AA0D15000B66C2B /* white.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		347EBE2A1A9BC515008FAD25 = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +571,7 @@
 				347EBEBB1A9CFCE2008FAD25 /* AbstractLevel.m */,
 				347EBF911A9CFD39008FAD25 /* AbstractLevelFactory.h */,
 				347EBF921A9CFD39008FAD25 /* AbstractLevelFactory.m */,
+				347B26FA1AA0CF8300B66C2B /* Chessboard */,
 				347EBFC11A9E0CEB008FAD25 /* PuzzleLevel */,
 				347EBEBC1A9CFCE2008FAD25 /* BalanceAndMemory */,
 				347EBED41A9CFCE2008FAD25 /* BottleLevel */,
@@ -953,6 +983,7 @@
 				347EBE9D1A9CF8D3008FAD25 /* Icon-Small.png in Resources */,
 				347EBE941A9CF8D3008FAD25 /* Default-Landscape~ipad.png in Resources */,
 				347EBF761A9CFCE2008FAD25 /* ninja_jump_3@2x.png in Resources */,
+				347B27031AA0D15000B66C2B /* chess.png in Resources */,
 				347EBF521A9CFCE2008FAD25 /* Green_tick_1.png in Resources */,
 				347EBE9B1A9CF8D3008FAD25 /* Icon-Small-50.png in Resources */,
 				347EBE911A9CF8D3008FAD25 /* Default-568h.png in Resources */,
@@ -994,6 +1025,7 @@
 				347EBF491A9CFCE2008FAD25 /* blueBottle.png in Resources */,
 				347EBF5F1A9CFCE2008FAD25 /* bottleIcon1.png in Resources */,
 				347EBF741A9CFCE2008FAD25 /* ninja_jump_1@2x.png in Resources */,
+				347B27041AA0D15000B66C2B /* white.jpg in Resources */,
 				347EBF5C1A9CFCE2008FAD25 /* FlyLevel.sks in Resources */,
 				347EBF7B1A9CFCE2008FAD25 /* ninja_run_4@2x.png in Resources */,
 				347EBF591A9CFCE2008FAD25 /* rope.png in Resources */,
@@ -1007,6 +1039,7 @@
 				347EBF8C1A9CFCE2008FAD25 /* letterI.png in Resources */,
 				347EBF541A9CFCE2008FAD25 /* queen.jpg in Resources */,
 				347EBEB21A9CF8D3008FAD25 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */,
+				347B27021AA0D15000B66C2B /* black.jpg in Resources */,
 				347EBF431A9CFCE2008FAD25 /* backgroundBML1.jpg in Resources */,
 				347EBFAA1A9D03D0008FAD25 /* DejalActivityView.podspec in Resources */,
 				347EBEA11A9CF8D3008FAD25 /* ButtonIcon01.png in Resources */,
@@ -1096,6 +1129,7 @@
 				347EBF881A9CFCE2008FAD25 /* GroundNode.m in Sources */,
 				347EBF8F1A9CFCE2008FAD25 /* TypeNinja.m in Sources */,
 				347EBF5D1A9CFCE2008FAD25 /* LevelLists.m in Sources */,
+				347B26FD1AA0CFB400B66C2B /* ChessBoardLevel.m in Sources */,
 				347EBF5E1A9CFCE2008FAD25 /* PopingCirclesLevel.m in Sources */,
 				347EBF3D1A9CFCE2008FAD25 /* BalanceAndMemoryScene.m in Sources */,
 			);
