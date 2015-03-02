@@ -9,12 +9,20 @@
 #import "Knight.h"
 
 @implementation Knight
+/*     J
+     I 0 x x 0 0
+       0 0 x 0 0
+       0 0 x 0 0
+       0 0 0 0 0
+       0 0 0 0 0
+ 
+ */
 
 -(BOOL) checkingIfPositionIsAvailable : (NSInteger) currentPosI andCurrentColumn: (NSInteger) currentPosJ andNextRow :(NSInteger) nextPosI andNextColumn : (NSInteger) nextPosJ {
     //The first check is for the bounds of the arrays
     //and the second is for the position itself
     
-    //Up-left
+    //Up-left 
     if(currentPosI-2>=0 && currentPosJ-1 >=0)
         if(currentPosJ-1==nextPosJ && currentPosI-2==nextPosI)
             return 1;

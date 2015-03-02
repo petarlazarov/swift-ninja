@@ -8,6 +8,7 @@
 @property SKSpriteNode* view2;
 @property SKSpriteNode* view3;
 @property SKSpriteNode* view4;
+@property SKAction* repeatRotation;
 
 
 @end
@@ -46,8 +47,12 @@ const CGFloat anchorPointY=0.4;
     self.view3.position = CGPointMake(((self.frame.size.width*anchorPointX)-defaultSize), ((self.frame.size.height*anchorPointY)+defaultSize));
     self.view4.position = CGPointMake(((self.frame.size.width*anchorPointX)-defaultSize), self.frame.size.height*anchorPointY);
     
+    NSLog(@"ROTATION OF THE NODES : 1- %f , 2- %f , 3 - %f , 4- %f ",self.view1.zRotation , self.view2.zRotation , self.view3.zRotation , self.view4.zRotation);
     
-    
+    [self rotateNode:self.view1];
+    [self rotateNode:self.view2];
+    [self rotateNode:self.view3];
+    [self rotateNode:self.view4];
     
     //Adding the childs to the scene
     [self addChild:self.view1];
@@ -64,12 +69,38 @@ const CGFloat anchorPointY=0.4;
     for (SKSpriteNode *node in nodes) {
         if([node isEqual:self.view1] || [node isEqual:self.view2] ||
            [node isEqual:self.view3] || [node isEqual:self.view4]){
-            
-        SKAction* rotate = [SKAction rotateByAngle:M_PI/2.0 duration:0.15];
-        [node runAction:rotate];
+            if([node hasActions]){
+                
+              [self stopRotation:node];
+            }else{
+                [node runAction:self.repeatRotation];
+            }
+//        SKAction* rotate = [SKAction rotateByAngle:M_PI/2.0 duration:0.15];
+//        [node runAction:rotate];
+        
+         NSLog(@"ROTATION OF THE NODES : 1- %f , 2- %f , 3 - %f , 4- %f ",self.view1.zRotation , self.view2.zRotation , self.view3.zRotation , self.view4.zRotation);
         }
     }
 }
 
+-(void) rotateNode : (SKSpriteNode*) node {
+    
+    SKAction* rotation = [SKAction rotateByAngle:M_PI/2.0 duration:2];
+    
+    self.repeatRotation = [SKAction repeatActionForever:rotation];
+    [node runAction:self.repeatRotation];
+}
 
+-(void) stopRotation : (SKSpriteNode*) node {
+    
+    [node removeAllActions];
+    if(node.zRotation>7*M_PI/4 || node.zRotation<M_PI/4)
+        node.zRotation=0;
+    if(node.zRotation>M_PI/4 && node.zRotation <3*M_PI/4)
+        node.zRotation=M_PI/2.0;
+    if(node.zRotation>3*M_PI/4 && node.zRotation < 5*M_PI/4)
+        node.zRotation=M_PI;
+    if(node.zRotation > 5*M_PI/4 && node.zRotation<7*M_PI/4)
+        node.zRotation=3*M_PI/2;
+}
 @end
