@@ -9,7 +9,7 @@
 @property SKSpriteNode* view3;
 @property SKSpriteNode* view4;
 @property SKAction* repeatRotation;
-
+@property BOOL gameHasEnded;
 
 @end
 
@@ -39,6 +39,11 @@ const CGFloat anchorPointY=0.4;
     self.view3.size= CGSizeMake(defaultSize, defaultSize);
     self.view4.size= CGSizeMake(defaultSize, defaultSize);
     
+    self.view1.name=@"face";
+    self.view2.name=@"face";
+    self.view3.name=@"face";
+    self.view4.name=@"face";
+    
     //Position of the Nodes
     
     
@@ -64,6 +69,7 @@ const CGFloat anchorPointY=0.4;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKSpriteNode *node in nodes) {
@@ -75,8 +81,7 @@ const CGFloat anchorPointY=0.4;
             }else{
                 [node runAction:self.repeatRotation];
             }
-//        SKAction* rotate = [SKAction rotateByAngle:M_PI/2.0 duration:0.15];
-//        [node runAction:rotate];
+
         
          NSLog(@"ROTATION OF THE NODES : 1- %f , 2- %f , 3 - %f , 4- %f ",self.view1.zRotation , self.view2.zRotation , self.view3.zRotation , self.view4.zRotation);
         }
@@ -103,4 +108,39 @@ const CGFloat anchorPointY=0.4;
     if(node.zRotation > 5*M_PI/4 && node.zRotation<7*M_PI/4)
         node.zRotation=3*M_PI/2;
 }
+
+- (void) endGame {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Very Good!"
+                                                    message:@""
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"DemandNewScene"
+     object:self];
+    
+}
+
+-(void)update:(NSTimeInterval)currentTime{
+    [super update:currentTime];
+    if (self.gameHasEnded) {
+        return;
+    }
+    if(![self.view1 hasActions]&& self.view1.zRotation==0
+       && ![self.view2 hasActions] && self.view2.zRotation==0
+       && ![self.view3 hasActions] && self.view3.zRotation==0
+       && ![self.view4 hasActions] && self.view4.zRotation==0){
+        self.gameHasEnded=YES;
+        [self endGame];
+    }
+    
+   }
+
 @end

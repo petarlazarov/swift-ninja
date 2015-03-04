@@ -74,6 +74,8 @@ NSInteger step = 0;
     
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+
     UITouch *touch = [touches anyObject];
     //    CGPoint location = [touch locationInNode:self];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
@@ -116,7 +118,8 @@ NSInteger step = 0;
                 [node removeFromParent];
                 NSLog(@"blue");
                 step=kStartStep;
-                self.currentScore +=(self.totalTime- self.elapsedTime)* kIndexPoints;
+                CGFloat points =(self.totalTime- self.elapsedTime)* kIndexPoints;
+                [self setCurrentScore:points];
                 [self endGame];
                 
             }
@@ -144,7 +147,7 @@ NSInteger step = 0;
 
 -(void)update:(CFTimeInterval)currentTime {
     if (hasGameEnded) {
-        self.pointsLabel.text = [NSString stringWithFormat:@"Score: %.0f", self.currentScore ];
+        self.pointsLabel.text = [NSString stringWithFormat:@"Score: %.0f", [self getCurrentScore] ];
         return;
     }
     

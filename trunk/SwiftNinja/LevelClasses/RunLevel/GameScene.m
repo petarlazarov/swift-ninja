@@ -126,7 +126,7 @@ UISwipeGestureRecognizer* swipeRightGestureRecognizer;
     }
     if ((firstBody.categoryBitMask == kNinjaCategory) && (secondBody.categoryBitMask == kCollisionDaggerCategory)) {
         ninja.ammo++;
-        self.currentScore+=kPointsForTakingDagger;
+        [self setCurrentScore:kPointsForTakingDagger];
         [secondBody.node removeFromParent];
         firstBody = nil;
         secondBody = nil;
@@ -138,7 +138,7 @@ UISwipeGestureRecognizer* swipeRightGestureRecognizer;
     
     if ((firstBody.categoryBitMask == kCollisionDaggerCategory) && (secondBody.categoryBitMask == kCollisionEnemyCategory)) {
         [firstBody.node removeFromParent];
-        self.currentScore+=kPointsForKillingMonster;
+        [self setCurrentScore:kPointsForKillingMonster];
         
         NSString *bloodEmitterPath = [[NSBundle mainBundle]  pathForResource:@"BloodParticle" ofType:@"sks"];
         SKEmitterNode* bloodEmitter =

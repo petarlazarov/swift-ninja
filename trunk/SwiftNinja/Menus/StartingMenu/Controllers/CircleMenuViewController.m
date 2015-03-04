@@ -2,7 +2,8 @@
 #import "CircleMenuViewController.h"
 #import "PlayModeViewController.h"
 #import "LeaderBoardTableViewController.h"
-#import "PuzzleLevel.h"
+#import "AbstractLevelFactory.h"
+#import "AbstractLevel.h"
 
 @implementation CircleMenuViewController
 
@@ -52,8 +53,7 @@
     
     //If its the second button move on to the training menu
     if([sender tag]==2 ){
-//        AwesomeMenuViewController* vc = [[AwesomeMenuViewController alloc] init];
-//        [self pushViewController:vc];
+        
         
         
     }

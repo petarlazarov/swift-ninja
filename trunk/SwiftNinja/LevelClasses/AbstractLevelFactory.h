@@ -11,8 +11,11 @@
 #import "TypeNinja.h"
 #import "PuzzleLevel.h"
 #import "ChessBoardLevel.h"
+#import "ObstacleLevel.h"
+
+
 /*
- This class is contains a factory method that returns the desired level.
+ This class contains a factory method that returns the desired level.
  Add your levels in the +sceneFactory method.
  */
 

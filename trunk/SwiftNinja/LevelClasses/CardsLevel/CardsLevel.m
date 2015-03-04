@@ -64,6 +64,8 @@ BurningProgressbar* progressBar;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+
     UITouch *touch = [touches anyObject];
     //    CGPoint location = [touch locationInNode:self];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
@@ -230,7 +232,8 @@ BurningProgressbar* progressBar;
             typeCard6 = @"back.jpg";
         }
         if (winIndex == kIndexChecker) {
-            self.currentScore +=(self.totalTime- self.elapsedTime)* kIndexPoints;
+            CGFloat points =(self.totalTime- self.elapsedTime)* kIndexPoints;
+            [self setCurrentScore:points];
             typeCard1 = @"back.jpg";
             typeCard2 = @"back.jpg";
             typeCard3 = @"back.jpg";
@@ -240,9 +243,7 @@ BurningProgressbar* progressBar;
             counter = kStartIndex+1;
             numIndex = kStartIndex;
             winIndex = kStartIndex;
-            [[NSNotificationCenter defaultCenter]
-             postNotificationName:@"DemandNewScene"
-             object:self];
+            
             hintLabel = @"A - B - B - Q - A - Q";
             [self endGame];
         }

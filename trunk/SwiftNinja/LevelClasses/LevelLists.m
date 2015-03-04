@@ -25,6 +25,10 @@
         [self.levelList addObject:@"BottlesLevel"];
         [self.levelList addObject:@"PuzzleLevel"];
         [self.levelList addObject:@"ChessBoardLevel"];
+        [self.levelList addObject:@"ObstacleLevel"];
+        //Typenumbers
+        //Asteroid
+        //obstacleLevel
     }
     return self;
 }

@@ -105,13 +105,12 @@ BOOL hasGameEnded;
         [(AGSpriteButton*)self.keyboard.buttonArray[keyIndex] performBlock:^{
             if ([self.handler checkNumber:keyIndex]) {
                 feedbackColor = [UIColor greenColor];
-                self.currentScore += kPointsForCorrectNumber;
+                [self setCurrentScore:kPointsForCorrectNumber];
             }
             else {
                 feedbackColor = [UIColor redColor];
-                if (self.currentScore>kPenaltyPointsForWrongNumber) {
-                    self.currentScore -= kPenaltyPointsForWrongNumber;
-                }
+                if ([self getCurrentScore]>kPenaltyPointsForWrongNumber) {
+                    [self setCurrentScore:(-kPenaltyPointsForWrongNumber)];                }
                 else {
                     self.currentScore = 0;
                 }
