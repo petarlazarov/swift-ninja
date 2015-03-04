@@ -147,12 +147,14 @@ CGFloat levelDuration = kFlyLevelTime;
     for (SKNode *node in nodes) {
         
         if ([node.name isEqualToString:@"circle1"]) {
-            self.currentScore+=(self.totalTime - self.elapsedTime)*kPointsCoefficient;
+            CGFloat points=(self.totalTime - self.elapsedTime)*kPointsCoefficient;
+            [self setCurrentScore:points];
             [self endGame];
         }
         
         if ([node.name isEqualToString:@"circle2"]) {
-            self.currentScore+=(self.totalTime- self.elapsedTime)*kPointsCoefficient;
+            CGFloat points=(self.totalTime - self.elapsedTime)*kPointsCoefficient;
+            [self setCurrentScore:points];
             [self endGame];
         }
     }

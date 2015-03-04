@@ -57,6 +57,12 @@
 		341AB3F51AA20BBC00FBD91A /* 24.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 341AB3C61AA20BBC00FBD91A /* 24.tiff */; };
 		341AB3F61AA20BBC00FBD91A /* 25.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 341AB3C71AA20BBC00FBD91A /* 25.tiff */; };
 		341AB3F71AA20BBC00FBD91A /* 26.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 341AB3C81AA20BBC00FBD91A /* 26.tiff */; };
+		342DDDA01AA70E2C000F15A2 /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 342DDD9F1AA70E2C000F15A2 /* asteroid.png */; };
+		342DDDA31AA70E5D000F15A2 /* AsteroidLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 342DDDA21AA70E5D000F15A2 /* AsteroidLevel.m */; };
+		342DDDA81AA7127A000F15A2 /* chain.png in Resources */ = {isa = PBXBuildFile; fileRef = 342DDDA61AA7127A000F15A2 /* chain.png */; };
+		342DDDA91AA7127A000F15A2 /* mace.png in Resources */ = {isa = PBXBuildFile; fileRef = 342DDDA71AA7127A000F15A2 /* mace.png */; };
+		342DDDAC1AA71297000F15A2 /* ObstacleLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 342DDDAB1AA71297000F15A2 /* ObstacleLevel.m */; };
+		342DDDAE1AA7186E000F15A2 /* steelMace.png in Resources */ = {isa = PBXBuildFile; fileRef = 342DDDAD1AA7186E000F15A2 /* steelMace.png */; };
 		347B26FD1AA0CFB400B66C2B /* ChessBoardLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B26FC1AA0CFB400B66C2B /* ChessBoardLevel.m */; };
 		347B27021AA0D15000B66C2B /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 347B26FF1AA0D15000B66C2B /* black.jpg */; };
 		347B27031AA0D15000B66C2B /* chess.png in Resources */ = {isa = PBXBuildFile; fileRef = 347B27001AA0D15000B66C2B /* chess.png */; };
@@ -208,6 +214,9 @@
 		347EBFD51A9E1688008FAD25 /* Face3.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFD11A9E1688008FAD25 /* Face3.png */; };
 		347EBFD61A9E1688008FAD25 /* Face4.png in Resources */ = {isa = PBXBuildFile; fileRef = 347EBFD21A9E1688008FAD25 /* Face4.png */; };
 		34B5BFA91AA117F50038B0AE /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B5BFA81AA117F50038B0AE /* target.png */; };
+		34C92D401AA74EBB00D49D1D /* rope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C92D3F1AA74EBB00D49D1D /* rope.jpg */; };
+		34C92D451AA75E8200D49D1D /* AlartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C92D431AA75E8200D49D1D /* AlartViewController.m */; };
+		34C92D461AA75E8200D49D1D /* AlartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C92D441AA75E8200D49D1D /* AlartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +283,14 @@
 		341AB3C61AA20BBC00FBD91A /* 24.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 24.tiff; sourceTree = "<group>"; };
 		341AB3C71AA20BBC00FBD91A /* 25.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 25.tiff; sourceTree = "<group>"; };
 		341AB3C81AA20BBC00FBD91A /* 26.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 26.tiff; sourceTree = "<group>"; };
+		342DDD9F1AA70E2C000F15A2 /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.png; sourceTree = "<group>"; };
+		342DDDA11AA70E5D000F15A2 /* AsteroidLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidLevel.h; sourceTree = "<group>"; };
+		342DDDA21AA70E5D000F15A2 /* AsteroidLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidLevel.m; sourceTree = "<group>"; };
+		342DDDA61AA7127A000F15A2 /* chain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chain.png; sourceTree = "<group>"; };
+		342DDDA71AA7127A000F15A2 /* mace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mace.png; sourceTree = "<group>"; };
+		342DDDAA1AA71297000F15A2 /* ObstacleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleLevel.h; sourceTree = "<group>"; };
+		342DDDAB1AA71297000F15A2 /* ObstacleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObstacleLevel.m; sourceTree = "<group>"; };
+		342DDDAD1AA7186E000F15A2 /* steelMace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steelMace.png; sourceTree = "<group>"; };
 		347B26FB1AA0CFB400B66C2B /* ChessBoardLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoardLevel.h; sourceTree = "<group>"; };
 		347B26FC1AA0CFB400B66C2B /* ChessBoardLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessBoardLevel.m; sourceTree = "<group>"; };
 		347B26FF1AA0D15000B66C2B /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
@@ -470,6 +487,10 @@
 		347EBFD11A9E1688008FAD25 /* Face3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face3.png; sourceTree = "<group>"; };
 		347EBFD21A9E1688008FAD25 /* Face4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Face4.png; sourceTree = "<group>"; };
 		34B5BFA81AA117F50038B0AE /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		34C92D3F1AA74EBB00D49D1D /* rope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rope.jpg; sourceTree = "<group>"; };
+		34C92D421AA75E8200D49D1D /* AlartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlartViewController.h; sourceTree = "<group>"; };
+		34C92D431AA75E8200D49D1D /* AlartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlartViewController.m; sourceTree = "<group>"; };
+		34C92D441AA75E8200D49D1D /* AlartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +575,44 @@
 				341AB3C81AA20BBC00FBD91A /* 26.tiff */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		342DDD9D1AA70E2C000F15A2 /* AsteroidsLevel */ = {
+			isa = PBXGroup;
+			children = (
+				342DDD9E1AA70E2C000F15A2 /* Resources */,
+				342DDDA11AA70E5D000F15A2 /* AsteroidLevel.h */,
+				342DDDA21AA70E5D000F15A2 /* AsteroidLevel.m */,
+			);
+			path = AsteroidsLevel;
+			sourceTree = "<group>";
+		};
+		342DDD9E1AA70E2C000F15A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				342DDD9F1AA70E2C000F15A2 /* asteroid.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		342DDDA41AA7127A000F15A2 /* ObstacleLevel */ = {
+			isa = PBXGroup;
+			children = (
+				342DDDA51AA7127A000F15A2 /* Resources */,
+				342DDDAA1AA71297000F15A2 /* ObstacleLevel.h */,
+				342DDDAB1AA71297000F15A2 /* ObstacleLevel.m */,
+			);
+			path = ObstacleLevel;
+			sourceTree = "<group>";
+		};
+		342DDDA51AA7127A000F15A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				342DDDAD1AA7186E000F15A2 /* steelMace.png */,
+				342DDDA61AA7127A000F15A2 /* chain.png */,
+				342DDDA71AA7127A000F15A2 /* mace.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		347B26FA1AA0CF8300B66C2B /* Chessboard */ = {
@@ -645,6 +704,7 @@
 		347EBE5C1A9CF5DE008FAD25 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				34C92D411AA75E8200D49D1D /* ExpandAlertView */,
 				347EBE5D1A9CF601008FAD25 /* CentralViewController.h */,
 				347EBE5E1A9CF601008FAD25 /* CentralViewController.m */,
 				347EBF9F1A9D0333008FAD25 /* Leaderboards */,
@@ -746,6 +806,8 @@
 				347EBEBB1A9CFCE2008FAD25 /* AbstractLevel.m */,
 				347EBF911A9CFD39008FAD25 /* AbstractLevelFactory.h */,
 				347EBF921A9CFD39008FAD25 /* AbstractLevelFactory.m */,
+				342DDDA41AA7127A000F15A2 /* ObstacleLevel */,
+				342DDD9D1AA70E2C000F15A2 /* AsteroidsLevel */,
 				347B26FA1AA0CF8300B66C2B /* Chessboard */,
 				347EBFC11A9E0CEB008FAD25 /* PuzzleLevel */,
 				347EBEBC1A9CFCE2008FAD25 /* BalanceAndMemory */,
@@ -863,6 +925,7 @@
 				347EBEEC1A9CFCE2008FAD25 /* ProgressNode.h */,
 				347EBEED1A9CFCE2008FAD25 /* ProgressNode.m */,
 				347EBEEE1A9CFCE2008FAD25 /* rope.png */,
+				34C92D3F1AA74EBB00D49D1D /* rope.jpg */,
 				347EBEEF1A9CFCE2008FAD25 /* spark.png */,
 			);
 			path = CommonLevelClasses;
@@ -1063,6 +1126,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		34C92D411AA75E8200D49D1D /* ExpandAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				34C92D421AA75E8200D49D1D /* AlartViewController.h */,
+				34C92D431AA75E8200D49D1D /* AlartViewController.m */,
+				34C92D441AA75E8200D49D1D /* AlartViewController.xib */,
+			);
+			name = ExpandAlertView;
+			path = Menus/ExpandAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1176,10 +1250,12 @@
 				341AB3EB1AA20BBC00FBD91A /* 18.tiff in Resources */,
 				347EBF6C1A9CFCE2008FAD25 /* enemy.png in Resources */,
 				347EBF8B1A9CFCE2008FAD25 /* letterA.png in Resources */,
+				342DDDAE1AA7186E000F15A2 /* steelMace.png in Resources */,
 				347EBE9E1A9CF8D3008FAD25 /* Icon-Small@2x.png in Resources */,
 				341AB3D61AA20BBC00FBD91A /* 7.tiff in Resources */,
 				347EBE421A9BC515008FAD25 /* Main.storyboard in Resources */,
 				347EBEA91A9CF8D3008FAD25 /* KYICircleMenuButton04.png in Resources */,
+				34C92D401AA74EBB00D49D1D /* rope.jpg in Resources */,
 				347EBF451A9CFCE2008FAD25 /* instructions.png in Resources */,
 				347EBE471A9BC515008FAD25 /* LaunchScreen.xib in Resources */,
 				347EBF711A9CFCE2008FAD25 /* ninja_fall_5@2x.png in Resources */,
@@ -1192,6 +1268,7 @@
 				341AB3F01AA20BBC00FBD91A /* 021.jpg in Resources */,
 				341AB3DA1AA20BBC00FBD91A /* 9.tiff in Resources */,
 				341AB3D91AA20BBC00FBD91A /* 009.jpg in Resources */,
+				342DDDA01AA70E2C000F15A2 /* asteroid.png in Resources */,
 				347EBF4E1A9CFCE2008FAD25 /* ace.jpg in Resources */,
 				347EBF701A9CFCE2008FAD25 /* ninja_fall_4@2x.png in Resources */,
 				341AB3F61AA20BBC00FBD91A /* 25.tiff in Resources */,
@@ -1224,6 +1301,7 @@
 				347EBEAB1A9CF8D3008FAD25 /* KYICircleMenuButton05.png in Resources */,
 				341AB3ED1AA20BBC00FBD91A /* 19.tiff in Resources */,
 				347EBF491A9CFCE2008FAD25 /* blueBottle.png in Resources */,
+				342DDDA91AA7127A000F15A2 /* mace.png in Resources */,
 				341AB3E11AA20BBC00FBD91A /* 013.jpg in Resources */,
 				341AB3CD1AA20BBC00FBD91A /* 003.jpg in Resources */,
 				347EBF5F1A9CFCE2008FAD25 /* bottleIcon1.png in Resources */,
@@ -1236,6 +1314,7 @@
 				347EBEAE1A9CF8D3008FAD25 /* KYICircleMenuButton06@2x.png in Resources */,
 				347EBF7D1A9CFCE2008FAD25 /* ninja_run_6@2x.png in Resources */,
 				347EBF771A9CFCE2008FAD25 /* ninja_jump_4@2x.png in Resources */,
+				34C92D461AA75E8200D49D1D /* AlartViewController.xib in Resources */,
 				347EBF621A9CFCE2008FAD25 /* lithium_atom.png in Resources */,
 				341AB3EF1AA20BBC00FBD91A /* 20.tiff in Resources */,
 				347EBF841A9CFCE2008FAD25 /* spark.png in Resources */,
@@ -1248,6 +1327,7 @@
 				347B27021AA0D15000B66C2B /* black.jpg in Resources */,
 				347EBF431A9CFCE2008FAD25 /* backgroundBML1.jpg in Resources */,
 				347EBFAA1A9D03D0008FAD25 /* DejalActivityView.podspec in Resources */,
+				342DDDA81AA7127A000F15A2 /* chain.png in Resources */,
 				341AB3D41AA20BBC00FBD91A /* 6.tiff in Resources */,
 				347EBEA11A9CF8D3008FAD25 /* ButtonIcon01.png in Resources */,
 				347EBE991A9CF8D3008FAD25 /* Icon-72.png in Resources */,
@@ -1314,6 +1394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342DDDAC1AA71297000F15A2 /* ObstacleLevel.m in Sources */,
 				347EBF891A9CFCE2008FAD25 /* PondObstacleNode.m in Sources */,
 				347EBF871A9CFCE2008FAD25 /* EnemyNode.m in Sources */,
 				347EBFC41A9E0CFF008FAD25 /* PuzzleLevel.m in Sources */,
@@ -1347,7 +1428,9 @@
 				347EBF5B1A9CFCE2008FAD25 /* FlyLevel.m in Sources */,
 				347EBF3C1A9CFCE2008FAD25 /* AbstractLevel.m in Sources */,
 				347EBF4B1A9CFCE2008FAD25 /* BottlesConstants.m in Sources */,
+				34C92D451AA75E8200D49D1D /* AlartViewController.m in Sources */,
 				347EBF401A9CFCE2008FAD25 /* BallToBalanceNode.m in Sources */,
+				342DDDA31AA70E5D000F15A2 /* AsteroidLevel.m in Sources */,
 				347EBE8E1A9CF8D3008FAD25 /* Constants.m in Sources */,
 				347EBF851A9CFCE2008FAD25 /* BackgroundNode.m in Sources */,
 				347EBF551A9CFCE2008FAD25 /* BurningProgressbar.m in Sources */,

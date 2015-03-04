@@ -17,6 +17,9 @@ static const NSTimeInterval kCardsLevelTime = 10;
 static const NSTimeInterval kBalanceAndMemoryTime = 30;
 static const NSTimeInterval kBottlesLevelTime = 6;
 static const NSTimeInterval kTypeNinjaLevelTime = 6;
+static const NSTimeInterval kChessLevelTime = 30;
+static const NSTimeInterval kPuzzleLevelTime=10;
+static const NSTimeInterval kSpaceshipLevel=30;
 
 static const float kScoreLabelScreenPositioningFactorWidth = 0.8;
 static const float kScoreLabelScreenPositioningFactorHeight = 0.90;

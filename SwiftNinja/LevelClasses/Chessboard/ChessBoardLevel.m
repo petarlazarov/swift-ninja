@@ -115,6 +115,7 @@ const NSInteger sizeOfSquare=70;
 //Movement of the knight piece
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (int i=0; i<[nodes count]; i++) {

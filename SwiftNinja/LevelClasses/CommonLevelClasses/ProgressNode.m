@@ -40,8 +40,8 @@ CGFloat progress;
                                                                                                        50)];
     timeProgress.position = CGPointMake(timeProgress.startingPositionX, parentScene.view.bounds.size.height-20);
     
-    SKSpriteNode* rope = [SKSpriteNode spriteNodeWithImageNamed:@"rope.png"];
-    rope.size = CGSizeMake(timeProgress.startingWidth,rope.size.height);
+    SKSpriteNode* rope = [SKSpriteNode spriteNodeWithImageNamed:@"rope.jpg"];
+    rope.size = CGSizeMake(timeProgress.startingWidth,rope.size.height*0.25);
     rope.position = CGPointMake(timeProgress.startingPositionX,0);
     [timeProgress addChild:rope];
     

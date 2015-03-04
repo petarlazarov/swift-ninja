@@ -28,14 +28,14 @@
     if ([name isEqual:@"RunLevel"]) {
         NSLog(@"Creating RunLevel");
 //        instance = [[GameScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kRunLevelTime];
-        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        instance = [[ObstacleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kChessLevelTime];
         
     }
     
     if ([name isEqual:@"BalanceAndMemoryLevel"]) {
         NSLog(@"Creating BalanceAndMemoryLevel");
 //        instance = [[BalanceAndMemoryScene alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kBalanceAndMemoryTime];
-        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        instance = [[ObstacleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kChessLevelTime];
         
     }
     if ([name isEqual:@"BottlesLevel"]) {
@@ -51,14 +51,18 @@
     }
     if ([name isEqual:@"PuzzleLevel"]) {
         NSLog(@"Creating PuzzleLevel");
-        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        instance = [[PuzzleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:1];
     }
     if ([name isEqual:@"ChessBoardLevel"]) {
         NSLog(@"ChessBoardLevel");
-        instance = [[ChessBoardLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kTypeNinjaLevelTime];
+        instance = [[ChessBoardLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:1];
     }
+   
 
-
+    if ([name isEqual:@"ObstacleLevel"]) {
+        NSLog(@"Creating ObstacleLevel");
+        instance = [[ObstacleLevel alloc] initWithSize:CGSizeMake(screenWidth, screenHeight) andTotalTime:kChessLevelTime];
+    }
     
     
     return instance ;

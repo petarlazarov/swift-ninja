@@ -4,6 +4,7 @@
 #import "CommonLevelConstants.h"
 #import "PlayModeViewController.h"
 
+
 @interface AbstractLevel ()
 
 @property NSInteger lives;
@@ -16,7 +17,7 @@
 @end
 
 static const CGFloat kDefaultTime = 10;
-
+static CGFloat currentScore;
 
 @implementation AbstractLevel
 
@@ -29,13 +30,17 @@ static const CGFloat kDefaultTime = 10;
         self.totalTime = totalTime;
         self.hasLevelEnded = NO;
         PlayModeViewController* vc =[[PlayModeViewController alloc] init];
-        self.currentScore=vc.currentScore;
+       // self.currentScore=vc.currentScore;
     }
     return self;
 }
 
--(void)setPoints:(CGFloat)points{
-    if(points && points>=0) _currentScore=points;
+-(CGFloat)getCurrentScore{
+    return currentScore;
+}
+
+-(void)setCurrentScore:(CGFloat)levelScore{
+    currentScore+=levelScore;
 }
 
 //Use this method if like the level to be the default 10 sec
@@ -49,7 +54,7 @@ static const CGFloat kDefaultTime = 10;
 
 //Calculating the points.Default is 0
 -(void) calculatePoints{
-    self.points=0;
+   // self.points=0;
 }
 
 -(BOOL)levelDidEnd:(SKView *)skView andWithNewScene:(SKScene *)newScene andWithTransition:(SKTransition *)transition{
@@ -70,12 +75,42 @@ static const CGFloat kDefaultTime = 10;
 
 // called when time's up
 - (void) endLevel {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's up!"
-                                                    message:@""
-                                                   delegate:self
-                                          cancelButtonTitle:@"End game"
-                                          otherButtonTitles:@"Next level", nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's up!"
+//                                                    message:@""
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"End game"
+//                                          otherButtonTitles:@"Next level", nil];
+//    [alert show];
+
+    //TESTING THE ENDINGLEVEL NODE
+    
+    SKSpriteNode* endingNode = [[SKSpriteNode alloc]init];
+    endingNode.size=CGSizeMake(self.frame.size.width, self.frame.size.height);
+    endingNode.position = CGPointMake(self.frame.size.width*0.5, -self.frame.size.height/2);
+    endingNode.color = [UIColor grayColor];
+    endingNode.alpha=0.4;
+    endingNode.name = @"end";
+    
+    SKAction* action = [SKAction moveTo:CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0) duration:1];
+    action.timingMode = SKActionTimingEaseOut;
+    [endingNode runAction:action];
+    
+    [self addChild:endingNode];
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+    for (SKNode *node in nodes) {
+        //go through nodes, get the zPosition if you want
+        //        int nodePos = node.zPosition;
+        
+        if ([node.name isEqualToString:@"end"])  {
+            NSLog(@"Ne go otrazqva");
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"DemandNewScene"
+             object:self];
+        }}
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
@@ -112,7 +147,7 @@ static const CGFloat kDefaultTime = 10;
     /* Called before each frame is rendered */
     [self.progressBarNode update:currentTime];
     
-    self.pointsLabel.text = [NSString stringWithFormat:@"Score: %.0f", self.currentScore ];
+    self.pointsLabel.text = [NSString stringWithFormat:@"Score: %.0f", [self getCurrentScore] ];
     
     if (self.hasLevelEnded) {
         return;

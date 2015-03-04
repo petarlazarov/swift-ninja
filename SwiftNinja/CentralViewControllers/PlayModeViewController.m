@@ -69,7 +69,7 @@ NSMutableArray* levelList;
             
             AbstractLevel* newScene = [AbstractLevelFactory sceneFactory:levelName];
             
-            self.currentScore+= self.scene.currentScore;
+           
             self.scene = nil;
             self.scene = newScene;
             
@@ -91,7 +91,6 @@ NSMutableArray* levelList;
         NSLog(@"Receive end game demand");
 
         
-        self.currentScore = self.scene.currentScore;
         UIAlertView* highScore = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"High Score : %.0f",self.currentScore] message:@"Do you want to submit the high score?" delegate:self cancelButtonTitle:@"No ,thanks!" otherButtonTitles:@"Yes Submit!", nil];
         highScore.delegate = self;
         [highScore show];

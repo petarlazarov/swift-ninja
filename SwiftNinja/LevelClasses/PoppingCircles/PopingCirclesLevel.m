@@ -57,6 +57,7 @@ static const CGFloat kTimeIntervalForPoppingNewCircle=0.3;
 }
 
 -(void) popNewCircle {
+    
     //Creating the bubble
     SKSpriteNode* poppingCircle = [[SKSpriteNode alloc] initWithImageNamed:kBubbleImageName];
     poppingCircle.size = CGSizeMake(32, 32);
@@ -106,6 +107,8 @@ static const CGFloat kTimeIntervalForPoppingNewCircle=0.3;
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKSpriteNode *node in nodes) {
@@ -146,7 +149,8 @@ static const CGFloat kTimeIntervalForPoppingNewCircle=0.3;
 }
 
 -(void) calculatePoints{
-    self.currentScore+=self.numberOfPoppedBubbles*kCalculatePointsCoefficient;
+    CGFloat points=self.numberOfPoppedBubbles*kCalculatePointsCoefficient;
+    [self setCurrentScore:points];
     }
 
 

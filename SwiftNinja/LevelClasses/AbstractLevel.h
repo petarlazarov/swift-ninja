@@ -7,11 +7,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "ProgressNode.h"
 #import "BurningProgressbar.h"
+#import "AlartViewController.h"
 
-@interface AbstractLevel : SKScene<LevelProtocol,UIAlertViewDelegate>
+@interface AbstractLevel : SKScene<LevelProtocol,UIAlertViewDelegate,ExpendableAlartViewDelegate>
 
 @property (readonly) NSString*  levelRules;
-@property CGFloat currentScore;
+//@property  CGFloat currentScore;
 @property SKLabelNode* pointsLabel;
 @property(readonly) NSTimeInterval totalTime;
 @property(readonly)NSTimeInterval elapsedTime;
@@ -25,6 +26,9 @@
 @property BurningProgressbar* progressBarNode;
 
 - (instancetype)initWithSize:(CGSize)size andTotalTime: (NSTimeInterval) totalTime;
+
+-(CGFloat) getCurrentScore;
+-(void) setCurrentScore : (CGFloat) levelScore;
 
 - (void) removeSceneAndChildren;
 -(CGFloat) getTimeForLevel;

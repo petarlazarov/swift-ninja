@@ -38,6 +38,8 @@ NSInteger didWinIndex = kStartIndex;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+
     UITouch *touch = [touches anyObject];
     //    CGPoint location = [touch locationInNode:self];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
