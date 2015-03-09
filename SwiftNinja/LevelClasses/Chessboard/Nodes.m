@@ -14,12 +14,12 @@
 }
 
 -(void)setRow:(NSInteger)row{
-    if(row>=0 && row<6)
+    if(row>=0 && row<3)
        _row=row;
 }
 
 -(void)setColumn:(NSInteger)column{
-    if(column>=0 && column<6)
+    if(column>=0 && column<3)
         _column=column;
 }
 

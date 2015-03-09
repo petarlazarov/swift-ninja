@@ -8,6 +8,6 @@
 
 #import "AbstractLevel.h"
 
-@interface ObstacleLevel : AbstractLevel
+@interface ObstacleLevel : AbstractLevel<UIGestureRecognizerDelegate>
 
 @end

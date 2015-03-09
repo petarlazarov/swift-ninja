@@ -12,9 +12,12 @@
 @property Knight* knight;
 
 @property NSInteger* randomInteger;
-
+@property NSInteger sizeOfSquare;
 @property CGFloat positionX;
 @property CGFloat positionY;
+@property NSInteger randomIndexForKnight;
+@property BOOL didWin;
+@property CGFloat timeElapsed;
 
 
 @end
@@ -28,36 +31,44 @@ const NSString* whiteField=@"white.jpg";
 const NSString* blackField=@"black.jpg";
 const NSString* horseFigure=@"chess.png";
 const NSString* target=@"target.png";
-const NSInteger sizeOfSquare=70;
+const NSInteger kCenterOfField=4;
+const NSInteger kWinningPoint=100;
 
 
 
 -(void)didMoveToView:(SKView *)view{
     self.chessField = [[NSMutableArray alloc] init];
+    self.sizeOfSquare=self.frame.size.width*0.16;
     self.positionY=self.frame.size.height*0.1;
     [self createSceneContents];
     self.knight = [[Knight alloc] init];
 
     //Placing the knight at a random position
-    NSInteger randomObjectIndex = arc4random_uniform([self.chessField count]);
-    self.knightNode = [Nodes spriteNodeWithImageNamed:horseFigure];
+    do {
+        self.randomIndexForKnight = arc4random_uniform([self.chessField count]);
+    } while (self.randomIndexForKnight==kCenterOfField);
     
-    Nodes* square = [self.chessField objectAtIndex:randomObjectIndex];
+    self.knightNode = [Nodes spriteNodeWithImageNamed:horseFigure];
+    self.knightNode.anchorPoint= CGPointMake(0, 0);
+    
+    Nodes* square = [self.chessField objectAtIndex:self.randomIndexForKnight];
     NSLog(@"SQUARE POSITION : X - : Y- ",square.position.x , square.position.y);
     self.knightNode.position = CGPointMake(square.position.x, square.position.y);
-    self.knightNode.size = CGSizeMake(sizeOfSquare, sizeOfSquare);
+    self.knightNode.size = CGSizeMake(self.sizeOfSquare, self.sizeOfSquare);
+
     [self addChild:self.knightNode];
     
     //Placing the target at random position
     
     do {
         self.randomInteger = arc4random_uniform([self.chessField count]);
-    } while (randomObjectIndex==self.randomInteger);
+    } while (self.randomIndexForKnight==self.randomInteger && self.randomIndexForKnight!=kCenterOfField);
     
     self.targetNode =[Nodes spriteNodeWithImageNamed:target];
     Nodes* nodeForTarget = [self.chessField objectAtIndex:self.randomInteger];
     self.targetNode.position= CGPointMake(nodeForTarget.position.x, nodeForTarget.position.y);
-    self.targetNode.size = CGSizeMake(sizeOfSquare, sizeOfSquare);
+    self.targetNode.size = CGSizeMake(self.sizeOfSquare, self.sizeOfSquare);
+    self.targetNode.anchorPoint=CGPointMake(0, 0);
     [self addChild:self.targetNode];
     
     [super didMoveToView:view];
@@ -66,9 +77,9 @@ const NSInteger sizeOfSquare=70;
 //Creating and positioning the chessboard
 -(void) createSceneContents{
     
-    for (int i=0; i<5; i++) {
+    for (int i=0; i<3; i++) {
         self.positionX=self.frame.size.width*0.3;
-        for (int j=0; j<5; j++) {
+        for (int j=0; j<3; j++) {
             if (i%2==0) {
                if(j%2==0){
                    [self createWhiteSquare:i andWithColumn:j];
@@ -85,29 +96,31 @@ const NSInteger sizeOfSquare=70;
                 }
             }
             
-            self.positionX+=sizeOfSquare;
+            self.positionX+=self.sizeOfSquare;
         }
-        self.positionY+=sizeOfSquare;
+        self.positionY+=self.sizeOfSquare;
     }
     
 }
 
 -(void) createWhiteSquare : (NSInteger) row andWithColumn : (NSInteger) column{
-    Nodes* node = [Nodes spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(sizeOfSquare, sizeOfSquare)];
+    Nodes* node = [Nodes spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(self.sizeOfSquare, self.sizeOfSquare)];
     node.position=CGPointMake(self.positionX, self.positionY);
     node.row=row;
     node.column=column;
     node.name=@"square";
+    node.anchorPoint=CGPointMake(0, 0);
     [self.chessField addObject:node];
     [self addChild:node];
 }
 
 -(void) createBlackSquare :(NSInteger) row andWithColumn : (NSInteger) column {
-    Nodes* node = [Nodes spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(sizeOfSquare, sizeOfSquare)];
+    Nodes* node = [Nodes spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.sizeOfSquare, self.sizeOfSquare)];
     node.position=CGPointMake(self.positionX, self.positionY);
     node.row=row;
     node.column=column;
     node.name=@"square";
+    node.anchorPoint =CGPointMake(0, 0);
     [self.chessField addObject:node];
     [self addChild:node];
 }
@@ -124,9 +137,31 @@ const NSInteger sizeOfSquare=70;
             
             Nodes* square = [nodes objectAtIndex:i];
             self.knightNode.position= CGPointMake(square.position.x, square.position.y);
+            self.knightNode.row=square.row;
+            self.knightNode.column=square.column;
+            
+            if (self.knightNode.position.x == self.targetNode.position.x && self.knightNode.position.y == self.targetNode.position.y) {
+                NSLog(@"WINING!");
+                self.didWin=YES;
+                
+                [self winLevel];
+            }
         }
         }
     }
+}
+
+-(void)update:(NSTimeInterval)currentTime{
+    if (self.didWin) return;
+    self.timeElapsed=currentTime;
+    [super update:currentTime];
+}
+
+-(void)winLevel{
+    [self setCurrentScore:kWinningPoint*self.timeElapsed];
+
+    [super winLevel];
+    
 }
 
 @end

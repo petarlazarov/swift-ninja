@@ -49,11 +49,19 @@
     
     [self.view addSubview:animationImageViews];
     [animationImageViews startAnimating];
-    
+    animationImageViews.animationRepeatCount=0;
+    [self performSelector:@selector(animationFinished) withObject:nil afterDelay:2.6];
+   
+   
+   
     
     
 }
 
+
+-(void)animationFinished {
+     [self performSegueWithIdentifier:@"yay" sender:self];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self performSegueWithIdentifier:@"yay" sender:self];

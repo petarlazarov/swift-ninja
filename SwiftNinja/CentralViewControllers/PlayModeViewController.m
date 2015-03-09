@@ -44,7 +44,12 @@ NSMutableArray* levelList;
                                                  selector:@selector(presentNewScene:)
                                                      name:@"EndGame"
                                                    object:nil];
-        
+       
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(presentNewScene:)
+                                                     name:@"Again"
+                                                   object:nil];
+
     }
 
     if (!self.skView) {
@@ -59,17 +64,17 @@ NSMutableArray* levelList;
 - (void) presentNewScene: (NSNotification*) notification {
 
     if ([[notification name] isEqualToString:@"DemandNewScene"]) {
-        NSLog (@"Receive demand for new scene, levellist count: %d", [levelList count]);
+        NSLog (@"Receive demand for new scene, levellist count: %lu", (unsigned long)[levelList count]);
         if ([levelList count]>0) {
             
             NSInteger randomObjectIndex = arc4random_uniform([levelList count]);
             NSString* levelName = [levelList objectAtIndex:randomObjectIndex];
             [levelList removeObjectAtIndex:randomObjectIndex];
             
-            
+            [self.scene removeAllChildren];
             AbstractLevel* newScene = [AbstractLevelFactory sceneFactory:levelName];
             
-           
+            
             self.scene = nil;
             self.scene = newScene;
             
@@ -89,16 +94,42 @@ NSMutableArray* levelList;
     }
     if ([[notification name] isEqualToString:@"EndGame"]) {
         NSLog(@"Receive end game demand");
-
         
-        UIAlertView* highScore = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"High Score : %.0f",self.currentScore] message:@"Do you want to submit the high score?" delegate:self cancelButtonTitle:@"No ,thanks!" otherButtonTitles:@"Yes Submit!", nil];
-        highScore.delegate = self;
-        [highScore show];
-        
+//        UIAlertView* highScore = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"High Score : %.0f",self.currentScore] message:@"Do you want to submit the high score?" delegate:self cancelButtonTitle:@"No ,thanks!" otherButtonTitles:@"Yes Submit!", nil];
+//        highScore.delegate = self;
+//        [highScore show];
         
         [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [self dismissViewControllerAnimated:NO completion:nil];
 
            }
+
+    if ([[notification name] isEqualToString:@"Again"]) {
+        NSLog(@"Receive end game demand");
+        
+        //        UIAlertView* highScore = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"High Score : %.0f",self.currentScore] message:@"Do you want to submit the high score?" delegate:self cancelButtonTitle:@"No ,thanks!" otherButtonTitles:@"Yes Submit!", nil];
+        //        highScore.delegate = self;
+        //        [highScore show];
+        [levelList removeAllObjects];
+        [levelList addObjectsFromArray:self.levelDelegate.levelList];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"DemandNewScene"
+         object:self];
+        
+//        PlayModeViewController* vc= [[PlayModeViewController alloc] init];
+//        [self presentViewController:vc animated:YES completion:nil];
+        
+    }
+    
+//    if ([[notification name] isEqualToString:@"Again"]) {
+//        NSLog(@"ama ne");
+//                    PlayModeViewController* vc= [[PlayModeViewController alloc] init];
+//                    [self presentViewController:vc animated:YES completion:nil];
+//        
+//        [[NSNotificationCenter defaultCenter] removeObserver:self];
+//
+//        
+//    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{

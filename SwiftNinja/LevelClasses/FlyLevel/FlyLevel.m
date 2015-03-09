@@ -7,8 +7,10 @@
 
 @property (nonatomic, strong) NSArray *progressViews;
 @property (nonatomic) CGFloat progress;
+@property BOOL didWin;
 
 @end
+
 
 @implementation FlyLevel
 
@@ -141,6 +143,7 @@ CGFloat levelDuration = kFlyLevelTime;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
     UITouch *touch = [touches anyObject];
 
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
@@ -149,13 +152,15 @@ CGFloat levelDuration = kFlyLevelTime;
         if ([node.name isEqualToString:@"circle1"]) {
             CGFloat points=(self.totalTime - self.elapsedTime)*kPointsCoefficient;
             [self setCurrentScore:points];
-            [self endGame];
+           //[self endGame];
+            self.didWin=YES;
         }
         
         if ([node.name isEqualToString:@"circle2"]) {
             CGFloat points=(self.totalTime - self.elapsedTime)*kPointsCoefficient;
             [self setCurrentScore:points];
-            [self endGame];
+           // [self endGame];
+            self.didWin=YES;
         }
     }
 }
@@ -183,6 +188,8 @@ CGFloat levelDuration = kFlyLevelTime;
 
 
 -(void)update:(CFTimeInterval)currentTime {
+    if (self.didWin) return;
+        
     [super update:currentTime];
     /* Called before each frame is rendered */
 }
