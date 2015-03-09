@@ -30,9 +30,10 @@
 -(CGFloat) getCurrentScore;
 -(void) setCurrentScore : (CGFloat) levelScore;
 
-- (void) removeSceneAndChildren;
+-(void) removeSceneAndChildren;
 -(CGFloat) getTimeForLevel;
 -(NSInteger) getRemainingLives;
-- (void) endLevel;
+-(void) endLevel;
+-(void) winLevel;
 -(SKLabelNode*) getLabelWithPoints;
 @end

@@ -12,6 +12,7 @@
 @property NSTimeInterval timeSinceLastUpdate;
 @property NSTimeInterval timeOfLastUpdate;
 @property (readwrite) NSTimeInterval elapsedTime;
+@property UIImageView *animationImageView;
 
 
 @end
@@ -83,20 +84,52 @@ static CGFloat currentScore;
 //    [alert show];
 
     //TESTING THE ENDINGLEVEL NODE
-    
-    SKSpriteNode* endingNode = [[SKSpriteNode alloc]init];
-    endingNode.size=CGSizeMake(self.frame.size.width, self.frame.size.height);
-    endingNode.position = CGPointMake(self.frame.size.width*0.5, -self.frame.size.height/2);
-    endingNode.color = [UIColor grayColor];
-    endingNode.alpha=0.4;
-    endingNode.name = @"end";
-    
-    SKAction* action = [SKAction moveTo:CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0) duration:1];
+    SKSpriteNode* endNodeBack = [[SKSpriteNode alloc] initWithImageNamed:@"grey.jpg"];
+    endNodeBack.position = CGPointMake(self.size.width*0.5, -self.size.height*0.1);
+    endNodeBack.xScale = self.size.width*0.0009;
+    endNodeBack.yScale = self.size.height*0.0009;
+    endNodeBack.name = @"EndingNodeBackground";
+    SKAction* action = [SKAction moveTo:CGPointMake(self.size.width*0.5, self.size.height*0.5) duration:1];
     action.timingMode = SKActionTimingEaseOut;
-    [endingNode runAction:action];
+    [endNodeBack runAction:action];
+    [self addChild:endNodeBack];
     
-    [self addChild:endingNode];
+    NSArray *imageNames = @[@"transparent.gif", @"transparent.gif", @"transparent.gif", @"transparent.gif",
+                            @"transparent.gif", @"transparent.gif", @"transparent.gif", @"transparent.gif",
+                            @"148.tiff", @"149.tiff", @"150.tiff", @"151.tiff",
+                            @"152.tiff", @"153.tiff", @"154.tiff", @"155.tiff",
+                            @"156.tiff", @"157.tiff", @"158.tiff", @"159.tiff",
+                            @"160.tiff", @"161.tiff", @"162.tiff"];
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < imageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+    }
+    self.animationImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width*0.26, -self.view.frame.size.height*0.14, self.view.frame.size.width*0.55, self.view.frame.size.height*0.89)];
+    self.animationImageView.animationImages = images;
+    self.animationImageView.animationDuration = 2.5;
+    [self.view addSubview:self.animationImageView];
+    [self.animationImageView startAnimating];
+
+    //Home Button
+    SKSpriteNode* homeButton = [[SKSpriteNode alloc] initWithImageNamed:@"home.png"];
+    homeButton.position = CGPointMake(-self.size.width*0.45, -self.size.height*0.7);
+    homeButton.xScale = self.size.width*0.0013;
+    homeButton.yScale = self.size.height*0.0026;
+    homeButton.name = @"HomeButton";
+    [endNodeBack addChild:homeButton];
+    //Again Button
+    SKSpriteNode* againButton = [[SKSpriteNode alloc] initWithImageNamed:@"again.png"];
+    againButton.position = CGPointMake(self.size.width*0.45, -self.size.height*0.7);
+    againButton.xScale = self.size.width*0.00020;
+    againButton.yScale = self.size.height*0.00046;
+    againButton.name = @"AgainButton";
+    [endNodeBack addChild:againButton];
+    
 }
+-(void)winLevel{
+    [self.animationImageView removeFromSuperview];
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
@@ -104,12 +137,24 @@ static CGFloat currentScore;
         //go through nodes, get the zPosition if you want
         //        int nodePos = node.zPosition;
         
-        if ([node.name isEqualToString:@"end"])  {
+        if ([node.name isEqualToString:@"HomeButton"])  {
             NSLog(@"Ne go otrazqva");
             [[NSNotificationCenter defaultCenter]
-             postNotificationName:@"DemandNewScene"
+             postNotificationName:@"EndGame"
              object:self];
-        }}
+            [self.animationImageView removeFromSuperview];
+        }
+        if ([node.name isEqualToString:@"AgainButton"])  {
+            NSLog(@"otrazqva");
+            currentScore=0;
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"Again"
+             object:self];
+            [self.animationImageView removeFromSuperview];
+            
+        }
+    
+    }
     
 }
 
